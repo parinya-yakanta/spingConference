@@ -54,14 +54,14 @@ public class UserInfoDaoMysql implements UserInfoDao {
     @Override
     public UserModel getByUserId(int Id) {
         return jdbcTemplate.queryForObject(
-                "SELECT * FROM Users WHERE id = ?",
+                "SELECT * FROM users WHERE id = ?",
                 new UserInfoRowMapper(), Id);
     }
 
 
     @Override
     public int insert(UserModel userModel) {
-        return jdbcTemplate.update("INSERT INTO Users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)",
+        return jdbcTemplate.update("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)",
                 userModel.getId(),
                 userModel.getPrefix(),
                 userModel.getName(),
@@ -89,13 +89,13 @@ public class UserInfoDaoMysql implements UserInfoDao {
 
     @Override
     public int update(UserModel userModel) {
-        return jdbcTemplate.update("UPDATE Users " +
-                        " SET prefix = ?, name = ?, card = ?" +
-                        " age = ?, sex = ?, tel = ?" +
-                        " institution = ?, address = ?, food = ?" +
-                        " image = ?, isAdmin = ?, position_id = ?" +
-                        " email = ?, email_verified_at = ?, password = ?" +
-                        " status = ?, confirm_playment = ?, remember_token = ?" +
+        return jdbcTemplate.update("UPDATE users " +
+                        " SET prefix = ?, name = ?, card = ?," +
+                        " age = ?, sex = ?, tel = ?," +
+                        " institution = ?, address = ?, food = ?," +
+                        " image = ?, isAdmin = ?, position_id = ?," +
+                        " email = ?, email_verified_at = ?, password = ?," +
+                        " status = ?, confirm_playment = ?, remember_token = ?," +
                         " created_at = ?, updated_at = ?" +
                         " WHERE id = ?",
                 userModel.getPrefix(),
