@@ -149,5 +149,11 @@ public class ResearchInfoDaoMysql implements ResearchInfoDao {
         );
     }
 
+    @Override
+    public ResearchModel deleteResearchById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM researchs WHERE id = ?",
+                new ResearchInfoRowMapper(), Id);
+    }
+
 }
 

@@ -71,4 +71,11 @@ public class DegreeInfoDaoMysql implements DegreeInfoDao {
                 degreeModel.getId()
         );
     }
+
+    @Override
+    public DegreeModel deleteDegreeById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM degrees WHERE id = ?",
+                new DegreeInfoRowMapper(), Id);
+    }
+
 }

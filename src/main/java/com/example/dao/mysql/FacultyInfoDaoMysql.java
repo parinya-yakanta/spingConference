@@ -72,4 +72,10 @@ public class FacultyInfoDaoMysql implements FacultyInfoDao {
         );
     }
 
+    @Override
+    public FacultyModel deleteFacultyById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM facultys WHERE id = ?",
+                new FacultyInfoRowMapper(), Id);
+    }
+
 }

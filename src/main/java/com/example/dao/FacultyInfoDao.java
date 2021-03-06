@@ -12,4 +12,6 @@ public interface FacultyInfoDao {
     int insert(FacultyModel facultyModel);
 
     int update(FacultyModel facultyModel);
+
+    FacultyModel deleteFacultyById(int id);
 }

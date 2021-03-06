@@ -40,7 +40,7 @@ public class MemberhostInfoDaoMysql implements MemberhostInfoDao {
     @Override
     public MemberhostModel getByMemberhostId(int Id) {
         return jdbcTemplate.queryForObject(
-                "SELECT * FROM presents WHERE id = ?",
+                "SELECT * FROM memberhosts WHERE id = ?",
                 new MemberhostInfoRowMapper(), Id);
     }
 
@@ -68,5 +68,12 @@ public class MemberhostInfoDaoMysql implements MemberhostInfoDao {
                 memberhostModel.getUpdatedAt(),
                 memberhostModel.getId()
         );
+    }
+
+
+    @Override
+    public MemberhostModel deleteMemberhostById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM memberhosts WHERE id = ?",
+                new MemberhostInfoRowMapper(), Id);
     }
 }

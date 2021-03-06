@@ -12,4 +12,6 @@ public interface PresentInfoDao {
     int insert(PresentModel presentModel);
 
     int update(PresentModel presentModel);
+
+    PresentModel deletePresentById(int id);
 }

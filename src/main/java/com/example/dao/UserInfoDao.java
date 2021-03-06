@@ -12,4 +12,6 @@ public interface UserInfoDao {
     int insert(UserModel userModel);
 
     int update(UserModel userModel);
+
+    UserModel deleteUserById(int id);
 }

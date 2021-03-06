@@ -2,9 +2,8 @@ package com.example.controller;
 
 import com.example.dao.FacultyInfoDao;
 import com.example.model.FacultyModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +19,26 @@ public class FacultyInfoController {
     @GetMapping("")
     public List<FacultyModel> getAll() {
         return facultyInfoDao.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public FacultyModel getByFacultyId(@PathVariable int id) {
+        return facultyInfoDao.getByFacultyId(id);
+    }
+
+    @Operation(summary = "Create facultys information.")
+    @PostMapping(value = "")
+    public void create(@RequestBody FacultyModel facultyModel) {
+        facultyInfoDao.insert(facultyModel);
+    }
+
+    @PutMapping(value = "")
+    public void update(@RequestBody FacultyModel facultyModel) {
+        facultyInfoDao.update(facultyModel);
+    }
+
+    @DeleteMapping("/{id}")
+    public FacultyModel facultyModel(@PathVariable int id) {
+        return facultyInfoDao.deleteFacultyById(id);
     }
 }

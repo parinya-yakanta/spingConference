@@ -69,4 +69,11 @@ public class PresentInfoDaoMysql implements PresentInfoDao {
                 presentModel.getId()
         );
     }
+
+    @Override
+    public PresentModel deletePresentById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM presents WHERE id = ?",
+                new PresentInfoRowMapper(), Id);
+    }
+
 }

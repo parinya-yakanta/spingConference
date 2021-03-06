@@ -12,4 +12,6 @@ public interface ResearchInfoDao {
     int insert(ResearchModel researchModel);
 
     int update(ResearchModel researchModel);
+
+    ResearchModel deleteResearchById(int id);
 }

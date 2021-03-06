@@ -12,4 +12,6 @@ public interface PositionInfoDao {
     int insert(PositionModel positionModel);
 
     int update(PositionModel positionModel);
+
+    PositionModel deletePositionById(int id);
 }

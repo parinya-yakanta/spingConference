@@ -68,4 +68,10 @@ public class PositionInfoDaoMysql implements PositionInfoDao {
         );
     }
 
+    @Override
+    public PositionModel deletePositionById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM presents WHERE id = ?",
+                new PositionInfoRowMapper(), Id);
+    }
+
 }

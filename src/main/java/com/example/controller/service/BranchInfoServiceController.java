@@ -12,7 +12,8 @@ import java.util.List;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
-@RequestMapping("api/v1/service/branchs")
+@RequestMapping("api/v1/service/0" +
+        "")
 public class BranchInfoServiceController {
 
     private BranchInfoDaoService branchInfoDaoService;

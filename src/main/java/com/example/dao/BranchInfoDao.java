@@ -12,4 +12,6 @@ public interface BranchInfoDao {
     int insert(BranchModel branchModel);
 
     int update(BranchModel branchModel);
+
+    BranchModel deleteBranchById(int id);
 }

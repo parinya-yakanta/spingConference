@@ -122,4 +122,10 @@ public class UserInfoDaoMysql implements UserInfoDao {
         );
     }
 
+    @Override
+    public UserModel deleteUserById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM users WHERE id = ?",
+                new UserInfoRowMapper(), Id);
+    }
+
 }

@@ -12,4 +12,6 @@ public interface DegreeInfoDao {
     int insert(DegreeModel degreeModel);
 
     int update(DegreeModel degreeModel);
+
+    DegreeModel deleteDegreeById(int id);
 }

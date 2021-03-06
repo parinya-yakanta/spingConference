@@ -76,4 +76,10 @@ public class BranchInfoDaoMysql implements BranchInfoDao {
         );
     }
 
+    @Override
+    public BranchModel deleteBranchById(int Id) {
+        return jdbcTemplate.queryForObject("DELETE FROM branchs WHERE id = ?",
+                new BranchInfoRowMapper(), Id);
+    }
+
 }

@@ -12,4 +12,6 @@ public interface MemberhostInfoDao {
     int insert(MemberhostModel memberhostModel);
 
     int update(MemberhostModel memberhostModel);
+
+    MemberhostModel deleteMemberhostById(int id);
 }
